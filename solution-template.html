@@ -655,7 +655,7 @@ div.title {text-align: center;}
         <div class="title">
           <h1 class="title">BEE 4750&#x2F;5750 Homework 4</h1>
           <h5>Susie Foster (saf253)</h5>
-          <h5>2022-10-31</h5>
+          <h5>2022-11-03</h5>
         </div>
 
         
@@ -691,6 +691,7 @@ div.title {text-align: center;}
 
 
 
+<p>A diagram of the system is shown below: <img src="C:\Users\susie\OneDrive - Cornell University\College\2. BEE 4750\HW4\IMG_0296.png" alt="Alternate Text" /> Notice that it is assumed the residual ash from the WTE cannot be  recycled and that all waste &#40;minus what is removed by recycling and  WTE&#41; must go to the landfill as its final destination.</p>
 <h2>Problem 1.1</h2>
 
 
@@ -736,13 +737,32 @@ R_{3,1}=percent_{ash}*(W_{1,3}+W_{2,3}+R_{2,3})
 \]</p>
 <p>Mg/day</p>
 <p class="math">\[
-R_{2,3}+R_{2,1}=(1-percent_recycled)*(W_{1,2}+W_{2,2})
-
-since I have simplified the variable R, there is no need to impose 
-zero constraints on the unused R values (
+R_{2,3}+R_{2,1}=(1-percent_{recycled})*(W_{1,2}+W_{2,2})
 \]</p>
-<p>R<em>&#123;1,2&#125;&#36;, R</em>&#123;1,2&#125;&#36;, etc.&#41;</p>
-<p>the last set of constraints are the constraints on the Y variable:  FINISH FINISH FINISH&#33;&#33;&#33;&#33; &#40;see Ed ab my formatting question&#41;</p>
+<p>since I have simplified the variable R, there is no need to impose  zero constraints on the unused R values &#40;<span class="math">$R_{1,2}$</span>, <span class="math">$R_{1,2}$</span>, etc.&#41;</p>
+<p>the last set of constraints are the constraints on the Y variable: </p>
+<p class="math">\[
+Y_1 = 1
+\]</p>
+<p class="math">\[
+Y_2 = \begin{cases} 
+
+    0 & \text{if } W_{1,2} + W_{2,2} = 0 \\ 
+
+    1 & \text{else } \\
+
+\end{cases}
+\]</p>
+<p class="math">\[
+Y_2 = \begin{cases} 
+
+    0 & \text{if } W_{1,3} + W_{2,3} + R_{2,3} = 0 \\ 
+
+    1 & \text{else } \\
+
+\end{cases}
+
+\]</p>
 <h2>Problem 1.5</h2>
 
 
@@ -828,16 +848,16 @@ zero constraints on the unused R values (
 <p>For values of <span class="math">$Y_j$</span>:    <span class="math">$Y_1$</span>&#61; 1.0,  <span class="math">$Y_2$</span>&#61; 0.0,  <span class="math">$Y_3$</span>&#61; 1.0.</p>
 <p>For vaues of <span class="math">$W_{i,j}$</span> in &#40;Mg/day&#41;:  <span class="math">$W_{1,1}$</span>&#61; 100.0,  <span class="math">$W_{1,2}$</span>&#61; 0.0,  <span class="math">$W_{1,3}$</span>&#61; 0.0,  <span class="math">$W_{2,1}$</span>&#61; 86.26,  <span class="math">$W_{2,2}$</span>&#61; 0.0,  <span class="math">$W_{2,3}$</span>&#61; 83.74.</p>
 <p>For vaues of <span class="math">$R_{k,j}$</span> in &#40;Mg/day&#41;:  <span class="math">$R_{2,1}$</span>&#61; 0.0,  <span class="math">$R_{2,3}$</span>&#61; 0.0,  <span class="math">$R_{3,1}$</span>&#61; 13.74.</p>
-<p>TALK ABOUT DIFFERENCES &#40;DOUBLE CHECK CONSTRAINTS AND STUFF&#41;</p>
+<p>The amounts of waste sent to and from each location  are still exactly the same, the only difference is the  overall price, whch is higher due to the increased fees.  The increase in transportation fee and the increase in  the WTE tipping fee must not have quite been enough to  open the MRF facility and pay for all of those expenses. </p>
 <h1>References</h1>
-<p>https://docs.julialang.org/en/v1/stdlib/Markdown/</p>
+<p><a href="https://docs.julialang.org/en/v1/stdlib/Markdown/">Julia Markdown and LaTeX documentation</a> Ed Discussion Slide Deck 13 from Class</p>
 
 
         <HR/>
         <div class="footer">
           <p>
             Published from <a href="solution-template.jmd">solution-template.jmd</a>
-            using <a href="http://github.com/JunoLab/Weave.jl">Weave.jl</a> v0.10.10 on 2022-10-31.
+            using <a href="http://github.com/JunoLab/Weave.jl">Weave.jl</a> v0.10.9 on 2022-11-03.
           </p>
         </div>
       </div>

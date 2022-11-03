@@ -36,6 +36,11 @@ FracTotMass= [.15 .40 .05 .03 .02 .05 .18 .04 .02 .02 .01 .03];
 CombustAsh=  [.08 .07 .05 .10 .15 .02 .02 1.0 1.0 1.0 1.0 .70];
 RecycRate=   [0.0 .55 .15 .10 0.0 .30 .40 .60 .75 .80 .50 0.0];
 ```
+A diagram of the system is shown below:
+![Alternate Text](C:\Users\susie\OneDrive - Cornell University\College\2. BEE 4750\HW4\IMG_0296.png)
+Notice that it is assumed the residual ash from the WTE cannot be 
+recycled and that all waste (minus what is removed by recycling and 
+WTE) must go to the landfill as its final destination.
 
 ## Problem 1.1
 ```julia
@@ -92,13 +97,35 @@ the third set of constraints are the ash and recycling residuals constraints:
 
 $R_{3,1}=percent_{ash}*(W_{1,3}+W_{2,3}+R_{2,3})$ Mg/day
 
-$R_{2,3}+R_{2,1}=(1-percent_recycled)*(W_{1,2}+W_{2,2})
+$R_{2,3}+R_{2,1}=(1-percent_{recycled})*(W_{1,2}+W_{2,2})$
 
 since I have simplified the variable R, there is no need to impose 
 zero constraints on the unused R values ($R_{1,2}$, $R_{1,2}$, etc.)
 
 the last set of constraints are the constraints on the Y variable: 
-FINISH FINISH FINISH!!!! (see Ed ab my formatting question)
+
+$Y_1 = 1$
+
+```math
+Y_2 = \begin{cases} 
+
+    0 & \text{if } W_{1,2} + W_{2,2} = 0 \\ 
+
+    1 & \text{else } \\
+
+\end{cases}
+```
+
+```math
+Y_2 = \begin{cases} 
+
+    0 & \text{if } W_{1,3} + W_{2,3} + R_{2,3} = 0 \\ 
+
+    1 & \text{else } \\
+
+\end{cases}
+
+```
 
 
 ## Problem 1.5
@@ -217,6 +244,14 @@ $R_{2,1}$= `j round(Rq2[1,1]; digits=2)`,
 $R_{2,3}$= `j round(Rq2[1,2]; digits=2)`, 
 $R_{3,1}$= `j round(Rq2[1,3]; digits=2)`.
 
-TALK ABOUT DIFFERENCES (DOUBLE CHECK CONSTRAINTS AND STUFF)
+The amounts of waste sent to and from each location 
+are still exactly the same, the only difference is the 
+overall price, whch is higher due to the increased fees. 
+The increase in transportation fee and the increase in 
+the WTE tipping fee must not have quite been enough to 
+open the MRF facility and pay for all of those expenses. 
+
 # References
-https://docs.julialang.org/en/v1/stdlib/Markdown/
+[Julia Markdown and LaTeX documentation](https://docs.julialang.org/en/v1/stdlib/Markdown/)
+Ed Discussion
+Slide Deck 13 from Class
